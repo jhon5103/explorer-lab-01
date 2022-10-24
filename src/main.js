@@ -1,5 +1,6 @@
 import "./css/index.css"
 import Imask from 'imask'
+import VanillaTilt from "vanilla-tilt"
 
 const ccBgColor01 = document.querySelector(".cc-bg svg > g g:nth-child(1) path")
 const ccBgColor02 = document.querySelector(".cc-bg svg > g g:nth-child(2) path")
@@ -138,3 +139,14 @@ function updateExpirationDate(date) {
   const ccExpiration = document.querySelector(".cc-extra .value")
   ccExpiration.innerText = date.length === 0 ? "02/32" : date
 }
+
+const bgCard = document.querySelector(".cc")
+VanillaTilt.init(bgCard, {
+  glare: false,
+  "max-glare": 0.5,
+  "glare-prerender": false,
+  transition: true,
+  max: 20,
+  speed: 800,
+  scale: 1.1,
+})
